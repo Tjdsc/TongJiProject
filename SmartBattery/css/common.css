@@ -2,11 +2,16 @@
 .all_w{
     width: 1200px;
     margin: 0 auto;
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
 }
+/*头部背景*/
 .web_top_bg{
     height: 85px;
     background-color: #141414;
 }
+/*头部大盒子*/
 .web_top_content{
     width: 1200px;
     margin: 0 auto;
@@ -19,3 +24,46 @@
     height: 80px;
     width: 220px;
 }
+/*动态搜索框模块-start*/
+.search-box{
+    float: left;
+    background: #2f3640;
+    height: 60px;
+    border-radius: 60px;
+    /*padding: 10px;*/
+    margin: 10px 20px 10px 50px;
+    display: flex;
+    justify-content: center;
+}
+.search-box:hover>.search-txt{
+    width: 280px;
+    padding: 0 6px;
+}
+.search-box:hover>.search-btn{
+    background: white;
+}
+.search-btn{
+    float: right;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #2f3640;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+    cursor: pointer;
+}
+.search-txt{
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: white;
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 60px;
+    width: 0;
+}
+/*动态搜索框模块-end*/
