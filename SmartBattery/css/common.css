@@ -1,15 +1,17 @@
+/*全局声明重要背景颜色*/
+:root{
+    --header-background-color:#141414;
+    --search-background-color:#2f3640;
+}
 /*版心*/
 .all_w{
     width: 1200px;
     margin: 0 auto;
-    display         : flex;
-    justify-content : center;
-    align-items     : center;
 }
 /*头部背景*/
 .web_top_bg{
     height: 85px;
-    background-color: #141414;
+    background-color: var(--header-background-color);
 }
 /*头部大盒子*/
 .web_top_content{
@@ -27,7 +29,7 @@
 /*动态搜索框模块-start*/
 .search-box{
     float: left;
-    background: #2f3640;
+    background: var(--search-background-color);
     height: 60px;
     border-radius: 60px;
     /*padding: 10px;*/
@@ -47,7 +49,7 @@
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background: #2f3640;
+    background: var(--search-background-color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -60,10 +62,68 @@
     outline: none;
     float: left;
     padding: 0;
-    color: white;
+    color: #ffffff;
     font-size: 16px;
     transition: 0.4s;
     line-height: 60px;
     width: 0;
 }
 /*动态搜索框模块-end*/
+/*头部导航栏_start*/
+.nav_container nav{
+    position: relative;
+    float: right;
+    height: 100%;
+    background-color: var(--search-background-color);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+.nav_container nav a{
+    position: relative;
+    float: left;
+    display: block;
+    z-index: 10;
+    line-height: 85px;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 0 20px 0 20px;
+    color: #ffffff;
+}
+nav .background_move {
+    position: absolute;
+    height: 100%;
+    background-color: #F97F51;
+    z-index: 9;
+    border-radius: 8px;
+    transition: all .3s;
+}
+.start-home,
+nav a:nth-child(1):hover~.background_move {
+    width: 76px;
+    left : 0;
+}
+.start-management,
+nav a:nth-child(2):hover~.background_move {
+    width: 112px;
+    left : 76px;
+}
+.start-example,
+nav a:nth-child(3):hover~.background_move {
+    width: 112px;
+    left : 188px;
+}
+.start-news,
+nav a:nth-child(4):hover~.background_move {
+    width: 76px;
+    left : 300px;
+}
+.start-about,
+nav a:nth-child(5):hover~.background_move {
+    width: 112px;
+    left : 376px;
+}
+/*头部导航栏-end*/
+
+
+
+
