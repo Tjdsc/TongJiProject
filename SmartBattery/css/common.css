@@ -1,0 +1,21 @@
+/*版心*/
+.all_w{
+    width: 1200px;
+    margin: 0 auto;
+}
+.web_top_bg{
+    height: 85px;
+    background-color: #141414;
+}
+.web_top_content{
+    width: 1200px;
+    margin: 0 auto;
+}
+.logo{
+    float: left;
+    margin: 2px 10px 2px 5px;
+}
+.logo img{
+    height: 80px;
+    width: 220px;
+}
