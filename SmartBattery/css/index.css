@@ -1,3 +1,6 @@
+:root{
+    --slideshow-text-color: #ffffff;
+}
 /*轮播图模块-start*/
 ul.slides{
     position: relative;
@@ -64,5 +67,44 @@ input[type="radio"]{
 }
 .slides input[type="radio"]:nth-of-type(3):checked~.slide{
     transform: translateX(-200%);
+}
+/*第一张图文字*/
+ul li.slide .introduction1{
+    position: absolute;
+    left: 15%;
+    top: 30%;
+}
+ul li.slide h3{
+    color: var(--slideshow-text-color);
+    font-size: 60px;
+}
+ul li.slide h4{
+    color: var(--slideshow-text-color);
+    font-size: 30px;
+    font-weight: normal;
+    padding-top: 15px;
+    text-align: center;
+}
+ul li.slide a{
+    display: inline-block;
+    width: 150px;
+    height: 50px;
+    margin: 60px 160px;
+    font-size: 16px;
+    color: var(--slideshow-text-color);
+    border: 1px solid var(--slideshow-text-color);
+    text-align: center;
+    line-height: 50px;
+}
+/*第二张图文字*/
+ul li.slide .introduction2{
+    position: absolute;
+    width: 900px;
+    left: 30%;
+    top: 20%;
+    background-color: rgba(0,0,0,.3);
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
 }
 /*轮播图模块-end*/
