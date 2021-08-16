@@ -1,0 +1,68 @@
+/*轮播图模块-start*/
+ul.slides{
+    position: relative;
+    overflow: hidden;
+    height: 700px;
+}
+li.slide{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .5s;
+}
+ul li.slide img{
+    width: 1920px;
+    height: 700px;
+}
+.slide:nth-of-type(2){
+    left: 100%;
+}
+.slide:nth-of-type(3){
+    left: 200%;
+}
+input[type="radio"]{
+    position: relative;
+    z-index: 100;
+    display: none;
+}
+.controls-visible{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 12px;
+}
+.controls-visible label{
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    background-color: #fff;
+    border-radius: 50%;
+    margin: 0 8px;
+    border: 2px solid #ffffff;
+}
+/*首先加入.slides input[type="radio"]:nth-of-type(1):checked判断当第一个radio按钮是已选择的状态时，加入~符号，找它同一层之后，
+.controls-visible里面的label:nth-of-type(1)，选择到第一个label*/
+.slides input[type="radio"]:nth-of-type(1):checked~.controls-visible label:nth-of-type(1){
+    background-color: #333;
+}
+.slides input[type="radio"]:nth-of-type(2):checked~.controls-visible label:nth-of-type(2){
+    background-color: #333;
+}
+.slides input[type="radio"]:nth-of-type(3):checked~.controls-visible label:nth-of-type(3){
+    background-color: #333;
+}
+/*当选中了第一个radio按钮之后，后面三张.slide的样式*/
+.slides input[type="radio"]:nth-of-type(1):checked~.slide{
+    transform: translateX(0%);
+}
+.slides input[type="radio"]:nth-of-type(2):checked~.slide{
+    transform: translateX(-100%);
+}
+.slides input[type="radio"]:nth-of-type(3):checked~.slide{
+    transform: translateX(-200%);
+}
+/*轮播图模块-end*/

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/base.css">
     <!-- 引入公共样式文件-->
     <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/index.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
 </head>
 <body>
@@ -40,7 +41,26 @@
             </nav>
         </div>
     </div>
-
 </div>
+<!--轮播图模块-->
+<div class="slideshow">
+    <ul class="slides">
+        <input type="radio" id="control-1" name="control" checked>
+        <input type="radio" id="control-2" name="control">
+        <input type="radio" id="control-3" name="control">
+
+        <li class="slide"><img src="upload/advertising1_1.jpg" alt=""></li>
+        <li class="slide"><img src="upload/advertising2.jpg" alt=""></li>
+        <li class="slide"><img src="upload/advertising3.jpg" alt=""></li>
+
+        <div class="controls-visible">
+            <label for="control-1"></label>
+            <label for="control-2"></label>
+            <label for="control-3"></label>
+        </div>
+    </ul>
+</div>
+
+
 </body>
 </html>
