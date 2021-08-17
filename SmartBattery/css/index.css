@@ -198,6 +198,10 @@ span.divider_line{
     height: 40px;
     border-bottom: 1px solid var(--main_color) ;
     font-size: 16px;
+    transition: all .6s;
+}
+.content_description a:hover{
+    transform: translateY(-10px);
 }
 /*首页产品模块-end*/
 /*首页新闻模块*/
