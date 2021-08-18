@@ -2,6 +2,7 @@
 :root{
     --header-background-color:#141414;
     --search-background-color:#2f3640;
+    --navigation_background-color:#F97F51;
 }
 /*版心*/
 .all_w{
@@ -12,6 +13,7 @@
 .web_top_bg{
     height: 85px;
     background-color: var(--header-background-color);
+    z-index: -2;
 }
 /*头部大盒子*/
 .web_top_content{
@@ -70,59 +72,112 @@
 }
 /*动态搜索框模块-end*/
 /*头部导航栏_start*/
-.nav_container nav{
-    position: relative;
+.nav_container{
+    /*position: relative;*/
     float: right;
     height: 100%;
     background-color: var(--search-background-color);
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
 }
-.nav_container nav a{
+.nav_container ul{
+    display: flex;
+    /*justify-content: space-around;*/
     position: relative;
-    float: left;
+    height: 100%;
+}
+.nav_container ul > li{
+    /*float: left;*/
+    height: 85px;
+}
+.nav_container ul > li > a{
+    position: relative;
+    /*float: left;*/
     display: block;
+    width: 100%;
+    height: 100%;
     z-index: 10;
     line-height: 85px;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     padding: 0 20px 0 20px;
     color: #ffffff;
 }
-nav .background_move {
-    position: absolute;
+.nav_container ul > li ol{
+    position: relative;
+    width: 100%;
+    background-color: var(--navigation_background-color);
+    border-radius: 8px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    /* 让盒子先沿着y轴缩放到0 也就是隐藏了 */
+    transform: scaleY(0);
+    /* 我们需要将盒子从上面滑动下来 设置一下缩放的中心点即可 设置到最上面的中间位置 */
+    transform-origin: 50% 0;
+    /* 设置过渡 */
+    transition: all 0.5s;
+    z-index: 999;
+    /*使用z-index该元素必须为除static以外的定位*/
+}
+.nav_container ul > li ol li{
+    height: 70px;
+    border-radius: 8px;
+}
+.nav_container ul > li ol li a{
+    display: block;
+    color: var(--slideshow-text-color);
+    font-size: 14px;
+    width: 100%;
     height: 100%;
-    background-color: #F97F51;
+    line-height: 70px;
+    text-align: center;
+}
+.nav_container ul > li ol li:hover{
+    background-color: var(--navigation_background-color);
+}
+/*.nav_container ul > li ol li a:hover{*/
+/*    color: var(--slideshow-text-color);*/
+/*}*/
+.nav_container ul > li:hover ol{
+    transform: scaleY(1);
+}
+.nav_container ul .background_move {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 76px;
+    height: 100%;
+    background-color: var(--navigation_background-color);
     z-index: 9;
     border-radius: 8px;
     transition: all .3s;
 }
 .start-home,
-nav a:nth-child(1):hover~.background_move {
-    width: 76px;
+.nav_container ul > li:nth-child(1):hover~.background_move {
+    width: 72px;
     left : 0;
 }
 .start-management,
-nav a:nth-child(2):hover~.background_move {
-    width: 112px;
-    left : 76px;
+.nav_container ul > li:nth-child(2):hover~.background_move {
+    width: 104px;
+    left : 72px;
 }
 .start-example,
-nav a:nth-child(3):hover~.background_move {
-    width: 112px;
-    left : 188px;
+.nav_container ul > li:nth-child(3):hover~.background_move {
+    width: 104px;
+    left : 176px;
 }
 .start-news,
-nav a:nth-child(4):hover~.background_move {
-    width: 76px;
-    left : 300px;
+.nav_container ul > li:nth-child(4):hover~.background_move {
+    width: 72px;
+    left : 280px;
 }
 .start-about,
-nav a:nth-child(5):hover~.background_move {
-    width: 112px;
-    left : 376px;
+.nav_container ul > li:nth-child(5):hover~.background_move {
+    width: 104px;
+    left : 352px;
 }
 /*头部导航栏-end*/
+
 /*网页尾部-start*/
 .footer_container{
 
