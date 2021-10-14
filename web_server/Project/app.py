@@ -37,7 +37,7 @@ def cell_capacity():
     """
     name = request.form.get('name')
     project_id = int(request.form.get('project_id'))
-    cycle, capacity = get_capacity(name, get_config(project_id))
+    cycle, capacity = get_capacity(name, get_config())
     data = {'cycle': cycle, 'capacity': capacity}
     return jsonify(data)
 
@@ -50,7 +50,7 @@ def knee_point():
     """
     name = request.form.get('name')
     project_id = int(request.form.get('project_id'))
-    knee_point = calculate_knee_point(name, get_config(project_id))
+    knee_point = calculate_knee_point(name, get_config())
     data = {'knee_point': knee_point}
     return jsonify(data)
 
